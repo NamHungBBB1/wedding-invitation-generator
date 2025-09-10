@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thiệp Mời Cưới</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Playfair Display', serif;
+            background-color: #fdfbf7;
+            color: #454545;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .invitation-card {
+            width: 100%;
+            max-width: 700px;
+            background-color: #ffffff;
+            border: 1px solid #f0f0f0;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            line-height: 1.8;
+        }
+
+        .invitation-card::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            right: -50px;
+            bottom: -50px;
+            background: linear-gradient(135deg, #fde7f3 0%, #eaf3ff 100%);
+            opacity: 0.22;
+            z-index: 0;
+        }
+
+        /* Soft overlay to ensure text readability */
+        .invitation-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.96));
+            z-index: 0;
+        }
+
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+
+        .header {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.2em;
+            color: #eb2f96;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+        }
+
+        .names {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.6em;
+            font-weight: 700;
+            color: #333333;
+            margin-bottom: 10px;
+        }
+
+        .ampersand {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.2em;
+            color: #eb2f96;
+            margin: 15px 0;
+            display: block;
+        }
+
+        .details {
+            font-size: 1.2em;
+            margin-top: 30px;
+            color: #555555;
+        }
+
+        .detail-item {
+            margin-bottom: 10px;
+        }
+
+        .highlight {
+            color: #eb2f96;
+            font-weight: 700;
+        }
+
+        .note {
+            margin-top: 25px;
+            font-style: italic;
+            color: #777777;
+            font-size: 1.1em;
+        }
+
+        .rsvp {
+            margin-top: 35px;
+            font-size: 1.1em;
+            border-top: 1px dashed #e0e0e0;
+            padding-top: 25px;
+            color: #666666;
+        }
+
+        .footer-text {
+            margin-top: 40px;
+            font-family: 'Dancing Script', cursive;
+            font-size: 2em;
+            color: #eb2f96;
+        }
+
+        /* Responsive tweaks */
+        @media (max-width: 600px) {
+            body {
+                padding: 12px;
+            }
+
+            .invitation-card {
+                padding: 28px;
+            }
+
+            .header {
+                font-size: 2.4em;
+            }
+
+            .names {
+                font-size: 2.1em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="invitation-card">
+        <div class="content-wrapper">
+            <div class="header">Mừng Tình Yêu Đơm Hoa!</div>
+
+            <div class="names">{bride}</div>
+            <span class="ampersand">&</span>
+            <div class="names">{groom}</div>
+
+            <div class="details">
+                Chúng tôi hân hạnh mời bạn đến dự lễ cưới của chúng tôi
+                <div class="detail-item">Vào ngày: <span class="highlight">{date}</span></div>
+                <div class="detail-item">Lúc: <span class="highlight">{time}</span></div>
+                <div class="detail-item">Tại: <span class="highlight">{venue}</span></div>
+            </div>
+
+            <div class="note">{note}</div>
+
+            <div class="rsvp">
+                Vui lòng xác nhận tham dự với <span class="highlight">{rsvpName}</span>
+                qua số điện thoại <span class="highlight">{rsvpPhone}</span>
+                trước ngày <span class="highlight">{rsvpDeadline}</span>.
+            </div>
+
+            <div class="footer-text">Hẹn gặp bạn ở đó nhé!</div>
+        </div>
+    </div>
+</body>
+
+</html>
